@@ -11,3 +11,6 @@ Assumptions
 
 Design
 - Each class is responsible for its operations and validation
+- Factories hide the complexity of creating objects from input strings
+- The Plateau class validates if the position the Rover wants to go to is valid, making sure it won't be out of boundaries or collide with another Rover in the same Plateau
+- The Domain layer is created separately so that another application can access the logic, for example a Web application can be used to create the objects and send instructions
