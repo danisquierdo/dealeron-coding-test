@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Text;
+
 namespace DealerOn.CodingTest.MarsRovers.Domain
 {
     public class Rover
@@ -8,12 +10,17 @@ namespace DealerOn.CodingTest.MarsRovers.Domain
             if (x < 0 || y < 0)
                 throw new Exception("Invalid rover coordinates");
 
+            if (plateau == null)
+                throw new ArgumentNullException("plateau");
+
             plateau.ValidatePosition(x, y);
 
             this.X = x;
             this.Y = y;
             this.Direction = direction;
+
             this.Plateau = plateau;
+            plateau.Rovers.Add(this);
         }
 
         public Plateau Plateau;
@@ -86,9 +93,20 @@ namespace DealerOn.CodingTest.MarsRovers.Domain
             ApplyPosition(x, y);
         }
 
+        public (int, int) GetCurrentPosition()
+        {
+            return (X, Y);
+        }
+
         public string PrintCurrentPosition()
         {
-            return X.ToString() + " " + Y.ToString() + " " + Direction.ToString()[0];
+            var sb = new StringBuilder();
+            sb.Append(X);
+            sb.Append(" ");
+            sb.Append(Y);
+            sb.Append(" ");
+            sb.Append(Direction.ToString()[0]);
+            return sb.ToString();
         }
 
         private void ApplyPosition(int x, int y)

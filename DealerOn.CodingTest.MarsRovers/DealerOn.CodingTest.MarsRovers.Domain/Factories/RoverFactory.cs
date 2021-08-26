@@ -1,41 +1,30 @@
 ﻿using System;
 namespace DealerOn.CodingTest.MarsRovers.Domain
 {
-    public static class EntityCreator
+    public static class RoverFactory
     {
-
-        public static Plateau CreatePlateau(string line)
-        {
-            var coordinates = line.Split(' ');
-
-            var x = Convert.ToInt32(coordinates[0]);
-            var y = Convert.ToInt32(coordinates[1]);
-
-            return new Plateau(x, y);
-        }
-
         public static Rover CreateRover(string line, Plateau plateau)
         {
             var coordinates = line.Split(' ');
 
             var x = Convert.ToInt32(coordinates[0]);
             var y = Convert.ToInt32(coordinates[1]);
-            var direction = coordinates[2];
+            var direction = coordinates[2][0];
 
-            return new Rover(x, y, GetDirectionFromText(direction), plateau);
+            return new Rover(x, y, GetDirectionFromLetter(direction), plateau);
         }
 
-        private static Direction GetDirectionFromText(string letter)
+        private static Direction GetDirectionFromLetter(char letter)
         {
             switch (letter)
             {
-                case "N":
+                case 'N':
                     return Direction.North;
-                case "E":
+                case 'E':
                     return Direction.East;
-                case "S":
+                case 'S':
                     return Direction.South;
-                case "W":
+                case 'W':
                     return Direction.West;
                 default:
                     throw new Exception("Invalid direction received.");

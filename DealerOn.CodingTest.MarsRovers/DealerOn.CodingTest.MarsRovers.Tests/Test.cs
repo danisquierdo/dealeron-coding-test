@@ -30,7 +30,7 @@ namespace DealerOn.CodingTest.MarsRovers.Tests
         }
 
         [Test()]
-        public void SendRoverOutOfBoundary_ThrowsException()
+        public void SendRoverOutOfBoundary_Fails()
         {
             var plateau1 = new Plateau(1, 1);
 
@@ -45,18 +45,51 @@ namespace DealerOn.CodingTest.MarsRovers.Tests
         }
 
         [Test()]
-        public void CreateInvalidPlateau_ThrowsException()
+        public void CreateInvalidPlateau_Fails()
         {
             Assert.Throws<Exception>(() => new Plateau(0, 0));
             Assert.Throws<Exception>(() => new Plateau(-1, 0));
+            Assert.Throws<Exception>(() => new Plateau(-1, -1));
         }
 
         [Test()]
-        public void CreateInvalidRover_ThrowsException()
+        public void CreateInvalidRover_Fails()
         {
             var plateau1 = new Plateau(1, 1);
             Assert.Throws<Exception>(() => new Rover(-1, 0, Direction.North, plateau1));
             Assert.Throws<Exception>(() => new Rover(0, -2, Direction.North, plateau1));
+            Assert.Throws<Exception>(() => new Rover(-1, -2, Direction.North, plateau1));
+        }
+
+        [Test()]
+        public void CreateRoverOutOfPlateau_Fails()
+        {
+            var plateau1 = new Plateau(1, 1);
+            Assert.Throws<Exception>(() => new Rover(2,2, Direction.North, plateau1));
+        }
+
+        [Test()]
+        public void CreateRoverWithoutPlateau_Fails()
+        {
+            Assert.Throws<ArgumentNullException>(() => new Rover(2, 2, Direction.North, null));
+        }
+
+        [Test()]
+        public void CreateRoverInOccupiedSpace_Fails()
+        {
+            var plateau1 = new Plateau(3, 3);
+            var rover1 = new Rover(1, 2, Direction.North, plateau1);
+            Assert.Throws<Exception>(() => new Rover(1, 2, Direction.North, plateau1));
+        }
+
+        [Test()]
+        public void SendRoverToOccupiedSpace_Fails()
+        {
+            var plateau1 = new Plateau(3, 3);
+            var rover1 = new Rover(1, 2, Direction.North, plateau1);
+            var rover2 = new Rover(1, 1, Direction.West, plateau1);
+            rover2.TurnRight();
+            Assert.Throws<Exception>(() => rover2.MoveForward());
         }
 
     }
