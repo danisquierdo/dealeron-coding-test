@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.810.8
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DealerOn.CodingTest.MarsRovers.App", "DealerOn.CodingTest.MarsRovers.App\DealerOn.CodingTest.MarsRovers.App.csproj", "{C1570076-B1BD-4065-9755-BFCC3E0D390A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DealerOn.CodingTest.MarsRovers.Domain", "DealerOn.CodingTest.MarsRovers.Domain\DealerOn.CodingTest.MarsRovers.Domain.csproj", "{D11FBB98-6EFB-478B-B217-435AB9458F03}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DealerOn.CodingTest.MarsRovers.Tests", "DealerOn.CodingTest.MarsRovers.Tests\DealerOn.CodingTest.MarsRovers.Tests.csproj", "{3D902C68-19AB-4F5D-8D78-2A1DB12B2110}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DealerOn.CodingTest.MarsRovers.ConsoleApp", "DealerOn.CodingTest.MarsRovers.ConsoleApp\DealerOn.CodingTest.MarsRovers.ConsoleApp.csproj", "{40E05A31-D702-404F-A4A2-4B9CB7B4AC25}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +15,6 @@ Global
 		Release|anycpu = Release|anycpu
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C1570076-B1BD-4065-9755-BFCC3E0D390A}.Debug|anycpu.ActiveCfg = Debug|anycpu
-		{C1570076-B1BD-4065-9755-BFCC3E0D390A}.Debug|anycpu.Build.0 = Debug|anycpu
-		{C1570076-B1BD-4065-9755-BFCC3E0D390A}.Release|anycpu.ActiveCfg = Release|anycpu
-		{C1570076-B1BD-4065-9755-BFCC3E0D390A}.Release|anycpu.Build.0 = Release|anycpu
 		{D11FBB98-6EFB-478B-B217-435AB9458F03}.Debug|anycpu.ActiveCfg = Debug|Any CPU
 		{D11FBB98-6EFB-478B-B217-435AB9458F03}.Debug|anycpu.Build.0 = Debug|Any CPU
 		{D11FBB98-6EFB-478B-B217-435AB9458F03}.Release|anycpu.ActiveCfg = Release|Any CPU
@@ -27,6 +23,10 @@ Global
 		{3D902C68-19AB-4F5D-8D78-2A1DB12B2110}.Debug|anycpu.Build.0 = Debug|Any CPU
 		{3D902C68-19AB-4F5D-8D78-2A1DB12B2110}.Release|anycpu.ActiveCfg = Release|Any CPU
 		{3D902C68-19AB-4F5D-8D78-2A1DB12B2110}.Release|anycpu.Build.0 = Release|Any CPU
+		{40E05A31-D702-404F-A4A2-4B9CB7B4AC25}.Debug|anycpu.ActiveCfg = Debug|anycpu
+		{40E05A31-D702-404F-A4A2-4B9CB7B4AC25}.Debug|anycpu.Build.0 = Debug|anycpu
+		{40E05A31-D702-404F-A4A2-4B9CB7B4AC25}.Release|anycpu.ActiveCfg = Release|anycpu
+		{40E05A31-D702-404F-A4A2-4B9CB7B4AC25}.Release|anycpu.Build.0 = Release|anycpu
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
