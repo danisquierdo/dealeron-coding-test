@@ -1,5 +1,5 @@
 ﻿using System;
-namespace DealerOn.CodingTest.MarsRovers.Logic
+namespace DealerOn.CodingTest.MarsRovers.Domain
 {
     public static class EntityCreator
     {
