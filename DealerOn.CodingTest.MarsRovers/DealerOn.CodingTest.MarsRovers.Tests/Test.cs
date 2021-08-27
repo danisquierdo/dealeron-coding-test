@@ -92,5 +92,19 @@ namespace DealerOn.CodingTest.MarsRovers.Tests
             Assert.Throws<Exception>(() => rover2.MoveForward());
         }
 
+        [Test()]
+        public void SendInvalidInstructionsToRover_Fails()
+        {
+            var plateau1 = new Plateau(3, 3);
+            var rover1 = new Rover(1, 2, Direction.North, plateau1);
+            Assert.Throws<Exception>(() => rover1.SendInstructions("LRMABC"));
+        }
+
+        [Test()]
+        public void SendInvalidDirection_ToRoverFactory_Fails()
+        {
+            var plateau1 = new Plateau(3, 3);
+            Assert.Throws<Exception>(() => RoverFactory.CreateRover("1 2 A", plateau1));
+        }
     }
 }
